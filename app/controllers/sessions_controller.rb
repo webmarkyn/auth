@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookies.permanent[:token] = nil
+    cookies.delete :token
     redirect_to posts_path, notice: 'Logged out!'
   end
 end
